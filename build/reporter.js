@@ -287,8 +287,8 @@ var SpecReporter = function (_events$EventEmitter) {
                 if (test.err.stack) {
                     var stack = test.err.stack.split(/\n/g).slice(0, 2).map(function (l) {
                         var output = `${preface} ${_this2.chalk.gray(l)}`;
-                        if (output.length > 60) {
-                            return `${output.slice(0, 57)}...`;
+                        if (output.length > 100) {
+                            return `${output.slice(0, 40)}...${output.slice(-57)}`;
                         }
 
                         return output;
